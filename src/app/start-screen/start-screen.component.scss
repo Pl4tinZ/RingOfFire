@@ -1,0 +1,39 @@
+.start-screen {
+    background-color: #000000;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        height: 100vh;
+    }
+}
+
+.start-label-container {
+    position: absolute;
+    top: 390px;
+    left: -92px;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 475px;
+        height: auto;
+
+        &:hover {
+            filter: brightness(1.1);
+            cursor: pointer;
+        }
+    }
+}
+
+.start-game-text {
+    position: absolute;
+    font-size: 42px;
+    cursor: pointer;
+}
