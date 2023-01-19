@@ -1,3 +1,7 @@
+body {
+    background-color: black;
+}
+
 .start-screen {
     background-color: #000000;
     width: 100vw;
@@ -6,6 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 
     img {
         height: 100vh;
@@ -14,15 +19,15 @@
 
 .start-label-container {
     position: absolute;
-    top: 390px;
-    left: -92px;
-    right: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
     align-items: center;
 
     img {
-        width: 475px;
+        width: 315px;
         height: auto;
 
         &:hover {
