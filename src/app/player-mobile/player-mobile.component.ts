@@ -2,11 +2,11 @@ import { Input } from '@angular/core';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-player',
-  templateUrl: './player.component.html',
-  styleUrls: ['./player.component.scss']
+  selector: 'app-player-mobile',
+  templateUrl: './player-mobile.component.html',
+  styleUrls: ['./player-mobile.component.scss']
 })
-export class PlayerComponent {
+export class PlayerMobileComponent {
 
   @Input() name: string;
   @Input() image = "player.png";

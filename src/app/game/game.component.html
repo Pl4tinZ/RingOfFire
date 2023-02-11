@@ -1,17 +1,40 @@
-<app-player class="player-container" [name]="player" [playerActive]="i == game.currentPlayer" *ngFor="let player of game.players; let i = index" [ngStyle]="{'top.px': 50 + (i * 100)}"></app-player>
+<app-player 
+    class="player-container hide-mobile" 
+    (click)="editPlayer(i)" 
+    [image]="game.player_images[i]" 
+    [name]="player"
+    [playerActive]="i == game.currentPlayer" 
+    *ngFor="let player of game.players; let i = index"
+    [ngStyle]="{'top.px': 20 + (i * 70)}">
+</app-player>
+
+<div class="mobile-player">
+    <app-player-mobile 
+        class="player-container hide-desktop" 
+        (click)="editPlayer(i)" 
+        [name]="player"
+        [image]="game.player_images[i]" 
+        [playerActive]="i == game.currentPlayer"
+        *ngFor="let player of game.players; let i = index">
+    </app-player-mobile>
+</div>
 
 <div class="field">
     <div class="card-stack">
-        <img [ngStyle]="{'right.px': i * 5}" *ngFor="let c of [0, 1, 2, 3]; let i = index;" src="assets/img/cards/card_cover.svg"><!--card stack-->
-        <img (click)="takeCard()" class="top-card" style="right: 25px;" src="assets/img/cards/card_cover.svg"><!--top card of card stack-->
-        <img *ngFor="let card of game.playedCards" class="played-cards" src="assets/img/cards/{{ card }}.svg"> <!--stack for played cards-->
-        <img (click)="takeCard()" *ngIf="pickCardAnimation" class=" pick-card" style="right: 25px;" src="assets/img/cards/{{ currentCard }}.svg"> <!--current card (animation)-->
+        <img [ngStyle]="{'right.px': i * 5}" *ngFor="let c of [0, 1, 2, 3]; let i = index;"
+            src="assets/img/cards/card_cover.svg"><!--card stack-->
+        <img (click)="takeCard()" class="top-card" style="right: 25px;"
+            src="assets/img/cards/card_cover.svg"><!--top card of card stack-->
+        <img *ngFor="let card of game.playedCards" class="played-cards" src="assets/img/cards/{{ card }}.svg">
+        <!--stack for played cards-->
+        <img (click)="takeCard()" *ngIf="game.pickCardAnimation" class=" pick-card" style="right: 25px;"
+            src="assets/img/cards/{{ game.currentCard }}.svg"> <!--current card (animation)-->
     </div>
 </div>
 
-<app-game-info [card]="currentCard"></app-game-info>
+<app-game-info [card]="game.currentCard"></app-game-info>
 <app-new-game *ngIf="newGameCard"></app-new-game>
 
 <button mat-fab color="primary" class="add-btn" (click)="openDialog()">
     <mat-icon>add</mat-icon>
-  </button>
+</button>

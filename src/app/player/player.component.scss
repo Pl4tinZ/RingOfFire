@@ -1,4 +1,5 @@
 .player {
+    overflow: hidden;
     display: flex;
     align-items: center;
     background-color: rgb(100, 100, 100);
@@ -7,18 +8,22 @@
     padding: 8px;
 
     span {
-        font-size: 32px;
+        font-size: 24px;
         margin-left: 16px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        // HIER WEITER MACHEN VIDEO BEI MIN 37
     }
 
     img {
-        height: 70px;
+        height: 50px;
         object-fit: cover;
         border-radius: 100%;
     }
 }
 
 .player-active {
-    border: solid 2px cyan;
+    border: solid 2px cyan inset;
     background-color: #673ab7;
 }

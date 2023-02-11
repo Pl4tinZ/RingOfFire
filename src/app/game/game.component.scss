@@ -55,10 +55,46 @@
 .player-container {
     position: absolute;
     right: 0;
+    z-index: 1;
+
+    @media (max-width: 900px) {
+        position: relative;
+        right: unset;
+    }
+}
+
+.mobile-player {
+    overflow: scroll;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    gap: 8px;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+
+    &::-webkit-scrollbar {
+        display: none;
+      }
 }
 
 .add-btn {
     position: absolute;
     right: 32px;
     bottom: 32px;
+}
+
+app-player, app-player-mobile {
+    cursor: pointer;
+
+    &:hover {
+        filter: brightness(1.5);
+    }
+}
+
+.mobile-player {
+    margin: 0;
+
+    margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
 }
