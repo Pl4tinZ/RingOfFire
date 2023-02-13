@@ -11,13 +11,33 @@ h1 {
     gap: 8px;
     padding: 16px;
     background-color: rgba($color: #000000, $alpha: 0.1);
+
+    @media (max-width: 700px) {
+        flex-wrap: wrap;
+        width: 350px;
+    }
+
+    @media (max-width: 500px) {
+        flex-wrap: wrap;
+        width: 200px;
+    }
 }
 
 .profile-picture {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 100%;
     border: solid 1px black;
+
+    @media (max-width: 1000px) {
+        width: 60px;
+        height: 60px;
+    }
+
+    @media (max-width: 800px) {
+        width: 50px;
+        height: 50px;
+    }
 
 
     &:hover {
